@@ -9,4 +9,9 @@ class Api::UsersController < ApplicationController
     current_user.liked_users << params[:id].to_i
     current_user.save
   end
+  
+  def destroy
+    
+  end
+
 end

@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   namespace :api do
-    resources :friends, only: [:index, :update]
+    resources :friends, only: [:index, :update,]
     get 'my_friends', to: 'friends#my_friends'
-    resources :posts, only: [:index, :create]
+    delete 'remove', to: 'friends#my_friends#remove/:id'
+    resources :posts, only: [:index, :create, :update, :destroy ]
   end
 
 end

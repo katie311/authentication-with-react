@@ -10,6 +10,7 @@ import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
 import MyFriends from './components/MyFriends';
 import Posts from './components/Posts';
+import PostForm from './components/PostForm';
 
 const App = () => (
 <div>
@@ -20,6 +21,7 @@ const App = () => (
         <ProtectedRoute exact path="/" component={Home} />
         <ProtectedRoute exact path='/my_friends' component={MyFriends} />
         <ProtectedRoute exact path="/posts" component={Posts} />
+        {/* <ProtectedRoute exact path='/posts/new' component={PostForm} /> */}
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route component={NoMatch} />

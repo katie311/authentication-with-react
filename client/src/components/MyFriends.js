@@ -10,9 +10,11 @@ class MyFriends extends React.Component {
       .then( res => this.setState({ friends: res.data, }) );
   }
 
-  downVote = (id) => {
-    const { friends, } = this.state;
-    this.setState({ friends: friends.filter( f => f.id !== id ), });
+  removeFriend = (id) => {
+    axios.delete(`/api/remove/${id}`)
+    debugger
+    // const { friends, } = this.state;
+    // this.setState({ friends: friends.filter( f => f.id !== id ), });
   }
 
   render() {
@@ -38,7 +40,7 @@ class MyFriends extends React.Component {
               </Card.Meta>
             </Card.Content>
             <Card.Content extra>
-              <Button color="red" icon basic onClick={() => this.downVote(friend.id)}>
+              <Button color="red" icon basic onClick={() => this.removeFriend(friend.id)}>
                 <Icon name="thumbs down" />  Remove Friend
               </Button>
             </Card.Content>

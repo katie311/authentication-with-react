@@ -10,7 +10,12 @@ class Api::FriendsController < ApplicationController
     current_user.save
   end
 
+  def remove
+    @friend.destroy
+  end
+
   def my_friends
     render json: User.liked(current_user.liked_friends)
   end
+
 end
